@@ -16,9 +16,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
 
-const { Header } = Layout;
 const { Title } = Typography;
-function AppHeader(props) {
+function Header(props) {
   const [input, setInput] = useState("");
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
@@ -107,7 +106,7 @@ function AppHeader(props) {
   }, []);
 
   return (
-    <Header
+    <Layout.Header
       style={{
         position: "fixed",
         width: "100vw",
@@ -193,8 +192,8 @@ function AppHeader(props) {
           style={{ position: "fixed", top: "18vh", right: "1rem" }}
         />
       )}
-    </Header>
+    </Layout.Header>
   );
 }
 
-export default AppHeader;
+export default Header;

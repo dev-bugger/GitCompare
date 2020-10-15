@@ -3,9 +3,14 @@ import { Timeline, Dropdown, Menu, Spin, Tooltip } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { ThunderboltOutlined } from "@ant-design/icons";
 import { setSort } from "../actions";
-import { sortData } from './../utils/sort';
+import { sortData } from "../utils/sort";
 function TimelineDiv(props) {
-  const sortCriteria = ["followers", "public_repos", "public_gists","following"];
+  const sortCriteria = [
+    "followers",
+    "public_repos",
+    "public_gists",
+    "following",
+  ];
 
   const loading = useSelector((state) => state.loading);
   const sort = useSelector((state) => state.sort);
@@ -36,7 +41,7 @@ function TimelineDiv(props) {
     followers: "Followers",
     public_repos: "Public Repos",
     public_gists: "Public Gists",
-    following: "Following"
+    following: "Following",
   };
   return (
     <div
@@ -75,7 +80,7 @@ function TimelineDiv(props) {
               <Tooltip
                 title={`${timeline[sort]}: ${user[sort]}`}
                 placement="top"
-                key={Math.random()*1000}
+                key={Math.random() * 1000}
               >
                 <Timeline.Item className="item" color="#001529">
                   {user.login}
