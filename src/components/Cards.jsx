@@ -3,8 +3,17 @@ import { useSelector } from "react-redux";
 import { Skeleton, Card, Avatar, Divider, Tooltip } from "antd";
 const { Meta } = Card;
 
+const classes = {
+    text: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-around",
+        flexGrow: 1,
+    },
+};
+
 function Cards(props) {
-    const loading = useSelector((state) => state.loading);
+    const loading = useSelector((state) => state.userReducer.loading);
     const {
         login,
         name,
@@ -27,14 +36,7 @@ function Cards(props) {
                 >
                     <Meta
                         avatar={<Avatar src={avatar_url} />}
-                        title={
-                            <Tooltip
-                                placement="leftTop"
-                                title={`${name} | ${login}`}
-                            >
-                                {`${name} | ${login}`}
-                            </Tooltip>
-                        }
+                        title={`${name} | ${login}`}
                         description={
                             <Tooltip placement="leftTop" title={bio}>
                                 {strBio}
@@ -42,24 +44,12 @@ function Cards(props) {
                         }
                     />
                     <Divider />
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-around",
-                        }}
-                    >
+                    <div style={classes.text}>
                         <span>Followers: {followers}</span>
                         <span>Following: {following}</span>
                     </div>
                     <Divider />
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-around",
-                        }}
-                    >
+                    <div style={classes.text}>
                         <span>Public Repos: {public_repos}</span>
                         <span>Public Gists: {public_gists}</span>
                     </div>

@@ -14,9 +14,9 @@ function Grids(props) {
 
     const sortCriteria = [...Object.keys(timeline)];
 
-    const sort = useSelector((state) => state.sort);
-    const loading = useSelector((state) => state.loading);
-    let userData = useSelector((state) => state.userData);
+    const sort = useSelector((state) => state.userReducer.sort);
+    const loading = useSelector((state) => state.userReducer.loading);
+    let userData = useSelector((state) => state.userReducer.userData);
     userData = userData.sort((a, b) =>
         sortData(
             a,
@@ -41,7 +41,10 @@ function Grids(props) {
             {!loading ? (
                 userData.map((user) => (
                     <Col
-                        span={8}
+                        xs={24}
+                        sm={12}
+                        md={12}
+                        lg={8}
                         key={user.id}
                         style={{ padding: "1rem", minHeight: 0 }}
                     >
