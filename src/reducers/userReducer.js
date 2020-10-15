@@ -2,7 +2,6 @@ const initialState = {
     userNames: [],
     userData: [],
     loading: false,
-    sort: "followers",
     screen: false
 };
 const userReducer = (state = initialState, action) => {
@@ -11,13 +10,14 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 userNames: action.payload,
-                userData: [],
                 screen: action.payload.length
             };
         case "SET_USER_PROFILE":
             return {
                 ...state,
-                userData: state.userData.concat(action.payload)
+                userData: state.userData.concat(action.payload),
+                userNames: state.userNames.concat(action.input),
+                screen: state.userNames.length + 1 > 0
             };
         case "SET_LOADING":
             return {
@@ -27,21 +27,16 @@ const userReducer = (state = initialState, action) => {
         case "HANDLE_ERROR":
             return {
                 ...state,
-                userNames: state.userNames.slice(0, -1),
-                screen: state.userNames.length - 1
+                screen: state.userNames.length > 0,
+                loading: false
             };
 
-        case "SET_SORT":
-            return {
-                ...state,
-                sort: action.payload
-            };
         case "HANDLE_RESET":
             return {
                 ...initialState
             };
         default:
-            return { ...state };
+            return state;
     }
 };
 

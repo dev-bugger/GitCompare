@@ -4,10 +4,11 @@ export const getUserName = (payload) => {
         payload
     };
 };
-export const setUserProfileData = (payload) => {
+export const setUserProfileData = (payload, input) => {
     return {
         type: "SET_USER_PROFILE",
-        payload
+        payload,
+        input
     };
 };
 export const setLoading = (payload) => {

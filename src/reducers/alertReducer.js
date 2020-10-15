@@ -20,7 +20,7 @@ const alertReducer = (state = initialState, { payload, type }) => {
             };
 
         default:
-            return { ...state };
+            return state;
     }
 };
 

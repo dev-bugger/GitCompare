@@ -9,7 +9,12 @@ const classes = {
         top: "12vh",
         right: "2vw"
     },
-    error: {}
+    error: {
+        position: "fixed",
+        top: "12vh",
+        right: "20vw",
+        minWidth: "50%"
+    }
 };
 
 const UniversalAlert = () => {

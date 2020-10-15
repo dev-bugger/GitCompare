@@ -9,12 +9,12 @@ function Grids(props) {
         followers: "Followers",
         public_repos: "Public Repos",
         public_gists: "Public Gists",
-        following: "Following",
+        following: "Following"
     };
 
     const sortCriteria = [...Object.keys(timeline)];
 
-    const sort = useSelector((state) => state.userReducer.sort);
+    const sort = useSelector((state) => state.timelineReducer.sort);
     const loading = useSelector((state) => state.userReducer.loading);
     let userData = useSelector((state) => state.userReducer.userData);
     userData = userData.sort((a, b) =>
@@ -25,7 +25,6 @@ function Grids(props) {
             sortCriteria.filter((s) => s !== sort)
         )
     );
-    console.log(userData);
     return (
         <Row
             gutter={[16, 16]}
@@ -35,7 +34,7 @@ function Grids(props) {
                 width: "100%",
                 margin: 0,
                 overflow: "auto",
-                height: "80vh",
+                height: "80vh"
             }}
         >
             {!loading ? (

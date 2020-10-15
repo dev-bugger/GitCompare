@@ -9,11 +9,11 @@ function TimelineDiv(props) {
         "followers",
         "public_repos",
         "public_gists",
-        "following",
+        "following"
     ];
 
     const loading = useSelector((state) => state.userReducer.loading);
-    const sort = useSelector((state) => state.userReducer.sort);
+    const sort = useSelector((state) => state.timelineReducer.sort);
     let userData = useSelector((state) => state.userReducer.userData);
     userData = userData.sort((a, b) =>
         sortData(
@@ -41,7 +41,7 @@ function TimelineDiv(props) {
         followers: "Followers",
         public_repos: "Public Repos",
         public_gists: "Public Gists",
-        following: "Following",
+        following: "Following"
     };
     return (
         <div
@@ -49,7 +49,7 @@ function TimelineDiv(props) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-start",
-                flexDirection: "column",
+                flexDirection: "column"
             }}
         >
             {(loading || userData.length !== 0) && (
@@ -72,7 +72,7 @@ function TimelineDiv(props) {
                             paddingTop: "5vh",
                             paddingLeft: "5vw",
                             height: "80vh",
-                            overflowY: "auto",
+                            overflowY: "auto"
                         }}
                         mode="left"
                     >
