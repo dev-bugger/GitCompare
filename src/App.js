@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Base from "./components/Base";
 import "antd/dist/antd.css";
 import { HashRouter } from "react-router-dom";
@@ -8,12 +7,10 @@ import { useSelector } from "react-redux";
 import MainScreen from "./views/MainScreen";
 
 function App() {
-    const screen = useSelector((state) => state.screen);
+    const screen = useSelector((state) => state.userReducer.screen);
     return (
         <HashRouter>
-            <div className="App">
-                <Base>{!screen ? <StartScreen /> : <MainScreen />}</Base>
-            </div>
+            <Base>{!screen ? <StartScreen /> : <MainScreen />}</Base>
         </HashRouter>
     );
 }
