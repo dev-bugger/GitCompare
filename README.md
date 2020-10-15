@@ -1,8 +1,8 @@
-/\*\*
+# GIT-HUB COMPARE
 
-- Web App to compare multiple github profiles
-- @author anjali.rawat <rawat.ar2418@gmail.com>
-  \*/
+Git Hub Compare is a web application to compare multiple github profiles by followers, following, publics-repos or public-gists
+
+## How to use?
 
 1. Type your user id in the textfield.
 2. Click compare.
@@ -11,3 +11,11 @@
 5. The timeline is also sorted according to the specified criteria.
 6. You can reset the app by clicking the reset button on the top right.
 7. The shareable url could also be copied using the copy button on the top right.
+
+## Author
+
+anjali.rawat <rawat.ar2418@gmail.com>
+
+## Project Status
+
+Currently refactoring code and making it cleaner and efficient!
