@@ -1,41 +1,25 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Row, Col, Spin } from "antd";
 import Cards from "./Cards";
-import { sortData } from "../utils/sort";
 
-function Grids(props) {
-    const timeline = {
-        followers: "Followers",
-        public_repos: "Public Repos",
-        public_gists: "Public Gists",
-        following: "Following"
-    };
+const classes = {
+    root: {
+        width: "100%",
+        margin: 0,
+        overflow: "auto",
+        height: "80vh"
+    },
+    col: { padding: "1rem", minHeight: 0 },
+    spin: { width: "20vw", margin: "15% auto" }
+};
 
-    const sortCriteria = [...Object.keys(timeline)];
-
-    const sort = useSelector((state) => state.timelineReducer.sort);
-    const loading = useSelector((state) => state.userReducer.loading);
-    let userData = useSelector((state) => state.userReducer.userData);
-    userData = userData.sort((a, b) =>
-        sortData(
-            a,
-            b,
-            sort,
-            sortCriteria.filter((s) => s !== sort)
-        )
-    );
+const Grids = ({ loading, userData }) => {
     return (
         <Row
             gutter={[16, 16]}
             justify="center"
             align="middle"
-            style={{
-                width: "100%",
-                margin: 0,
-                overflow: "auto",
-                height: "80vh"
-            }}
+            style={classes.root}
         >
             {!loading ? (
                 userData.map((user) => (
@@ -45,15 +29,15 @@ function Grids(props) {
                         md={12}
                         lg={8}
                         key={user.id}
-                        style={{ padding: "1rem", minHeight: 0 }}
+                        style={classes.col}
                     >
                         <Cards userData={user} />
                     </Col>
                 ))
             ) : (
-                <Spin style={{ width: "20vw", margin: "15% auto" }} />
+                <Spin style={classes.spin} />
             )}
         </Row>
     );
-}
+};
 export default Grids;

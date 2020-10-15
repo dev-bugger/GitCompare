@@ -41,7 +41,7 @@ function Header(props) {
 
     const handleOnReset = () => {
         dispatch(handleReset());
-        history.push("");
+        history.replace("");
     };
 
     const copyToClipboard = async () => {

@@ -1,7 +1,9 @@
 import { Divider } from "antd";
 import React from "react";
+import { useSelector } from "react-redux";
 import Grids from "../components/Grids";
 import TimelineDiv from "../components/Timeline";
+import { sortData } from "../utils/sort";
 
 const classes = {
     root: {
@@ -16,12 +18,16 @@ const classes = {
 };
 
 const MainScreen = () => {
-    console.log("here");
+    const loading = useSelector((state) => state.userReducer.loading);
+    const sort = useSelector((state) => state.timelineReducer.sort);
+    let userData = useSelector((state) => state.userReducer.userData);
+    userData = userData.sort((a, b) => sortData(a, b, sort));
+
     return (
         <div style={classes.root}>
-            <TimelineDiv />
+            <TimelineDiv loading={loading} userData={userData} sort={sort} />
             <Divider type="vertical" style={classes.divider} />
-            <Grids />
+            <Grids loading={loading} userData={userData} />
         </div>
     );
 };
