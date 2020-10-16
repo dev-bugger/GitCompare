@@ -7,7 +7,7 @@ const classes = {
         width: "100%",
         margin: 0,
         overflow: "auto",
-        height: "80vh"
+        height: "86vh"
     },
     col: { padding: "1rem", minHeight: 0 },
     spin: { width: "20vw", margin: "15% auto" }

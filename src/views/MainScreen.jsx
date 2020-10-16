@@ -1,7 +1,7 @@
-import { Divider } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
 import Grids from "../components/Grids";
+import SortDrawer from "../components/SortDrawer";
 import TimelineDiv from "../components/Timeline";
 import { sortData } from "../utils/sort";
 
@@ -10,10 +10,6 @@ const classes = {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "flex-start"
-    },
-    divider: {
-        height: "85vh",
-        borderLeft: "0.2rem solid rgba(0, 0, 0, 0.06)"
     }
 };
 
@@ -25,8 +21,13 @@ const MainScreen = () => {
 
     return (
         <div style={classes.root}>
-            <TimelineDiv loading={loading} userData={userData} sort={sort} />
-            <Divider type="vertical" style={classes.divider} />
+            <SortDrawer>
+                <TimelineDiv
+                    loading={loading}
+                    userData={userData}
+                    sort={sort}
+                />
+            </SortDrawer>
             <Grids loading={loading} userData={userData} />
         </div>
     );

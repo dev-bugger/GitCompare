@@ -1,9 +1,3 @@
-export const getUserName = (payload) => {
-    return {
-        type: "GET_USER_NAME",
-        payload
-    };
-};
 export const setUserProfileData = (payload, input) => {
     return {
         type: "SET_USER_PROFILE",

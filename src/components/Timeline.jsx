@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline, Dropdown, Menu, Spin, Tooltip, Typography } from "antd";
+import { Timeline, Dropdown, Menu, Spin, Tooltip } from "antd";
 import { useDispatch } from "react-redux";
 import { ThunderboltOutlined } from "@ant-design/icons";
 import { setSort } from "../actions";
@@ -9,9 +9,7 @@ const classes = {
     root: {
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        height: "80vh"
+        flexDirection: "column"
     },
     timeline: {
         width: "20vw",
@@ -23,9 +21,8 @@ const classes = {
     },
     timelineItem: {},
     spin: { width: "20vw", margin: "15% auto" },
-    title: {
-        fontSize: "1.75rem",
-        marginBottom: "2vh"
+    btn: {
+        width: "100%"
     }
 };
 
@@ -46,15 +43,12 @@ const TimelineDiv = ({ loading, userData, sort }) => {
 
     return (
         <div style={classes.root}>
-            <Typography>
-                <Typography.Title style={classes.title}>
-                    Sort it out, HERE!
-                </Typography.Title>
-            </Typography>
             <Dropdown.Button
                 overlay={menu}
                 icon={<ThunderboltOutlined />}
                 disabled={userData.length < 2}
+                style={classes.btn}
+                className="sort-btn"
             >
                 Sort by {sort}
             </Dropdown.Button>
