@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Button, Input } from "antd";
 import React, { useState, useEffect, useRef } from "react";
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, GithubOutlined } from "@ant-design/icons";
 import {
     setUserProfileData,
     setLoading,
@@ -14,7 +14,7 @@ import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import { modify } from "../utils/modify";
 const classes = {
-    button: { marginRight: "1vw" },
+    button: {},
     input: { width: "12rem" }
 };
 
@@ -108,7 +108,7 @@ const Search = (props) => {
                 disabled={!Boolean(input.trim())}
                 onClick={handleClick}
             >
-                Compare
+                <GithubOutlined style={{ color: "#4F407C" }} />
             </Button>
         </>
     );

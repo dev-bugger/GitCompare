@@ -13,8 +13,8 @@ const classes = {
     },
     timeline: {
         width: "20vw",
-        paddingTop: "5vh",
-        paddingLeft: "5vw",
+        paddingTop: "4vh",
+        paddingLeft: "0",
         overflowY: "auto",
         display: "flex",
         flexDirection: "column"
@@ -59,6 +59,7 @@ const TimelineDiv = ({ loading, userData, sort }) => {
                 <Timeline style={classes.timeline} mode="left">
                     {userData.map((user) => (
                         <Tooltip
+                            classname="tooltip"
                             title={`${timeline[sort]}: ${user[sort]}`}
                             placement="top"
                             key={Math.random() * 1000}

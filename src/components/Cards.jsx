@@ -8,8 +8,8 @@ const classes = {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        flexGrow: 1,
-    },
+        flexGrow: 1
+    }
 };
 
 function Cards(props) {
@@ -22,7 +22,7 @@ function Cards(props) {
         public_repos,
         public_gists,
         followers,
-        following,
+        following
     } = props.userData;
     let strBio = bio === null || bio.length === 0 ? "..." : bio;
     return (
@@ -38,7 +38,11 @@ function Cards(props) {
                         avatar={<Avatar src={avatar_url} />}
                         title={`${name} | ${login}`}
                         description={
-                            <Tooltip placement="leftTop" title={bio}>
+                            <Tooltip
+                                classname="tooltip"
+                                placement="leftTop"
+                                title={bio}
+                            >
                                 {strBio}
                             </Tooltip>
                         }

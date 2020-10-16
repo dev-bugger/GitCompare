@@ -6,7 +6,7 @@ import { closeAlert } from "../actions";
 const classes = {
     notice: {
         position: "fixed",
-        top: "12vh",
+        bottom: "2vh",
         right: "2vw",
         zIndex: 2
     },

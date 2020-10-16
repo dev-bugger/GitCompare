@@ -1,5 +1,6 @@
 const initialState = {
-    sort: "followers"
+    sort: "followers",
+    open: false
 };
 
 const timelineReducer = (state = initialState, { payload, type }) => {
@@ -12,6 +13,11 @@ const timelineReducer = (state = initialState, { payload, type }) => {
         case "HANDLE_RESET":
             return {
                 ...initialState
+            };
+        case "TOGGLE_DRAWER":
+            return {
+                ...state,
+                open: payload
             };
         default:
             return state;

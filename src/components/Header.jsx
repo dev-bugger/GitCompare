@@ -1,12 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { Button, Typography, Space, Layout, Tooltip } from "antd";
-import { SyncOutlined, EyeOutlined } from "@ant-design/icons";
+import { Typography, Space, Layout } from "antd";
 import Avatar from "antd/lib/avatar/avatar";
-import { handleReset, setAlert, closeAlert } from "../actions";
-import compareIcon from "../assests/compare.png";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import compareIcon from "../assests/compare1.png";
 import Search from "./Search";
 
 const { Title } = Typography;
@@ -26,54 +22,21 @@ const classes = {
         alignItems: "center",
         justifyContent: "space-between"
     },
-    avatar: { height: "3rem", width: "3rem" },
+    avatar: { height: "4rem", width: "4rem", borderRadius: 0 },
     title: {
-        color: "white",
+        color: "#ffffff",
         fontSize: "2rem",
+        whiteSpace: "nowrap",
         margin: 0
     },
-    button: { marginRight: "0.5rem" }
+    button: { marginRight: "0.5rem" },
+    btn: {
+        position: "fixed",
+        top: "15vh"
+    }
 };
 
 function Header(props) {
-    let history = useHistory();
-    const dispatch = useDispatch();
-
-    const handleOnReset = () => {
-        dispatch(handleReset());
-        history.replace("");
-    };
-
-    const copyToClipboard = async () => {
-        const link = window.location.href;
-        await navigator.clipboard
-            .writeText(link)
-            .then(() => {
-                dispatch(
-                    setAlert({
-                        text: "Successfully Copied",
-                        type: "success",
-                        status: "notice"
-                    })
-                );
-                setTimeout(() => {
-                    dispatch(closeAlert());
-                }, 3000);
-            })
-            .catch(() => {
-                dispatch(
-                    setAlert({
-                        text: "Failed to Copy Link",
-                        type: "failure",
-                        status: "notice"
-                    })
-                );
-                setTimeout(() => {
-                    dispatch(closeAlert());
-                }, 3000);
-            });
-    };
-
     return (
         <Layout.Header style={classes.header}>
             <div style={classes.headerSection}>
@@ -84,23 +47,9 @@ function Header(props) {
                     </Typography>
                 </Space>
             </div>
+
             <div style={classes.headerSection}>
                 <Search />
-                <Button
-                    shape="circle"
-                    onClick={handleOnReset}
-                    style={classes.button}
-                >
-                    <Tooltip title="RESET">
-                        <SyncOutlined />
-                    </Tooltip>
-                </Button>
-
-                <Button shape="circle" onClick={copyToClipboard}>
-                    <Tooltip title="Get Shareable Link">
-                        <EyeOutlined />
-                    </Tooltip>
-                </Button>
             </div>
         </Layout.Header>
     );

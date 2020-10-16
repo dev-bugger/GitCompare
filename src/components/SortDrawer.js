@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Drawer } from "antd";
-import { Button } from "antd";
-import sort from "../assests/sort.png";
 import { CloseOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDrawer } from "../actions";
 
 const classes = {
     btn: {
@@ -21,7 +21,7 @@ const classes = {
     },
     title: {
         flexGrow: 1,
-        marginLeft: "2vw",
+        marginLeft: "3rem",
         color: "#ffffff"
     },
     drawer: {
@@ -36,23 +36,17 @@ const Title = ({ onClose }) => (
     </div>
 );
 const SortDrawer = ({ children }) => {
-    const [open, setOpen] = useState(false);
-
+    // const [open, setOpen] = useState(false);
+    const open = useSelector((state) => state.timelineReducer.open);
+    const dispatch = useDispatch();
     return (
         <>
-            <Button
-                shape="round"
-                style={classes.btn}
-                onClick={() => setOpen(true)}
-            >
-                <img src={sort} alt="sort" style={classes.img} />
-            </Button>
             <Drawer
                 className="drawer"
-                title={<Title onClose={() => setOpen(false)} />}
+                title={<Title onClose={() => dispatch(toggleDrawer(false))} />}
                 placement="left"
                 closable={false}
-                onClose={() => setOpen(false)}
+                onClose={() => dispatch(toggleDrawer(false))}
                 visible={open}
                 getContainer={false}
                 style={{ position: "absolute" }}

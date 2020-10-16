@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Buttons from "../components/Buttons";
 import Grids from "../components/Grids";
 import SortDrawer from "../components/SortDrawer";
 import TimelineDiv from "../components/Timeline";
@@ -28,6 +29,7 @@ const MainScreen = () => {
                     sort={sort}
                 />
             </SortDrawer>
+            <Buttons />
             <Grids loading={loading} userData={userData} />
         </div>
     );

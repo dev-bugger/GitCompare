@@ -29,6 +29,12 @@ export const setSort = (payload) => {
         payload
     };
 };
+export const toggleDrawer = (payload) => {
+    return {
+        type: "TOGGLE_DRAWER",
+        payload
+    };
+};
 
 export const setAlert = (payload) => ({
     type: "SET_ALERT",
