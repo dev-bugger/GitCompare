@@ -38,7 +38,7 @@ div::-webkit-scrollbar-thumb {
 .item .ant-timeline-item-tail {
     border-left: 0.1rem solid #001529;
     top: 0.625rem;
-    left: 0.3rem;
+    left: 0.5rem;
     height: calc(100% - 0.625rem);
 }
 .item .ant-timeline-item-content {
@@ -48,15 +48,15 @@ div::-webkit-scrollbar-thumb {
     width: fit-content;
     padding-bottom: 1rem;
     margin: 0 0 0 3.25rem;
-    top: -0.4375rem;
+    top: -1rem;
 }
 div .ant-timeline-item {
-    font-size: 0.875rem;
-    padding-bottom: 1.25rem;
+    font-size: 1.6rem;
+    padding-bottom: 0.25rem;
 }
 div .ant-timeline-item-head {
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.7rem;
+    height: 0.7rem;
     border: 0.125rem solid transparent;
 }
 div .ant-timeline-item-last > .ant-timeline-item-content {
@@ -80,7 +80,7 @@ div .ant-divider-horizontal {
 /* LAYOUT */
 div .ant-layout-header {
     line-height: 4rem;
-    background: #ad6f86;
+    background: #836bba;
 }
 
 /* SPACE */
@@ -115,6 +115,9 @@ div .ant-input-clear-icon {
 }
 
 /* BUTTON */
+.sort-btn .ant-btn:first-child {
+    flex-grow: 1;
+}
 div .ant-btn {
     border: 0.0625rem solid transparent;
     height: 2rem;
@@ -182,4 +185,32 @@ div .ant-avatar {
     font-size: 0.875rem;
     height: 4rem;
     width: 4rem;
+}
+
+/* DRAWER */
+.drawer .ant-drawer-content-wrapper {
+    width: 20rem !important;
+}
+
+.drawer .ant-drawer-header,
+.drawer .ant-drawer-body {
+    padding: 1.5rem;
+}
+
+.drawer .ant-drawer-header {
+    background-color: #836bba;
+    border-bottom: 0.125rem solid #f0f0f0;
+    border-radius: 0;
+    height: 10vh;
+    display: inline-flex;
+    align-items: center;
+}
+
+.drawer .ant-drawer-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.drawer .ant-drawer-content {
+    background-color: #f0f2f5;
 }

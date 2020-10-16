@@ -7,13 +7,15 @@ const classes = {
     notice: {
         position: "fixed",
         top: "12vh",
-        right: "2vw"
+        right: "2vw",
+        zIndex: 2
     },
     error: {
         position: "fixed",
         top: "12vh",
         right: "20vw",
-        minWidth: "50%"
+        minWidth: "50%",
+        zIndex: 2
     }
 };
 

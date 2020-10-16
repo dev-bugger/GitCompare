@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "antd";
-import logo from "../assests/logo.png";
+import logo from "../assests/icon.gif";
 const classes = {
     root: {
         display: "flex",
@@ -20,7 +20,7 @@ const classes = {
         margin: 0,
         lineHeight: "3rem"
     },
-    image: { height: "4rem", width: "4rem", margin: "1rem" }
+    image: { height: "10rem", width: "10rem", margin: "0.5rem" }
 };
 
 const StartScreen = (props) => {
@@ -32,10 +32,11 @@ const StartScreen = (props) => {
                     <br />
                     with
                     <br />
+                    <img src={logo} alt="logo" style={classes.image} />
+                    <br />
                     GIT-HUB COMPARE
                 </Typography.Title>
             </Typography>
-            <img src={logo} alt="logo" style={classes.image} />
         </div>
     );
 };

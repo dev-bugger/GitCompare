@@ -6,12 +6,6 @@ const initialState = {
 };
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "GET_USER_NAME":
-            return {
-                ...state,
-                userNames: action.payload,
-                screen: action.payload.length
-            };
         case "SET_USER_PROFILE":
             return {
                 ...state,
@@ -30,7 +24,6 @@ const userReducer = (state = initialState, action) => {
                 screen: state.userNames.length > 0,
                 loading: false
             };
-
         case "HANDLE_RESET":
             return {
                 ...initialState
