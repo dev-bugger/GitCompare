@@ -1,13 +1,3 @@
-.root {
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    background: #f0f2f5;
-    overflow: hidden;
-    font-family: "Palatino Linotype";
-}
-
 /* SCROLLBAR */
 ul::-webkit-scrollbar {
     width: 0.3rem;

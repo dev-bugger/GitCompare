@@ -6,11 +6,19 @@ const classes = {
     root: {
         width: "100%",
         margin: 0,
-        overflow: "auto",
-        height: "86vh"
+        overflowY: "auto",
+        overflowX: "hidden",
+        height: "calc(100vh - 7rem)"
     },
     col: { padding: "1rem", minHeight: 0 },
-    spin: { width: "20vw", margin: "15% auto" }
+    spin: {
+        width: "20vw",
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)",
+        zIndex: 1
+    }
 };
 
 const Grids = ({ loading, userData }) => {
@@ -21,7 +29,8 @@ const Grids = ({ loading, userData }) => {
             align="middle"
             style={classes.root}
         >
-            {!loading ? (
+            <Spin style={classes.spin} spinning={loading} />
+            {!loading &&
                 userData.map((user) => (
                     <Col
                         xs={24}
@@ -33,10 +42,7 @@ const Grids = ({ loading, userData }) => {
                     >
                         <Cards userData={user} />
                     </Col>
-                ))
-            ) : (
-                <Spin style={classes.spin} />
-            )}
+                ))}
         </Row>
     );
 };

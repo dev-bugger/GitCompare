@@ -9,6 +9,10 @@ const classes = {
         alignItems: "center",
         justifyContent: "space-around",
         flexGrow: 1
+    },
+    root: {
+        maxWidth: "50vw",
+        margin: "0 auto"
     }
 };
 
@@ -27,7 +31,7 @@ function Cards(props) {
     let strBio = bio === null || bio.length === 0 ? "..." : bio;
     return (
         <>
-            <Card>
+            <Card style={classes.root}>
                 <Skeleton
                     loading={loading}
                     avatar

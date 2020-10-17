@@ -15,7 +15,7 @@ import Axios from "axios";
 import { modify } from "../utils/modify";
 const classes = {
     button: {},
-    input: { width: "12rem" }
+    input: { width: "30vw" }
 };
 
 const Search = (props) => {

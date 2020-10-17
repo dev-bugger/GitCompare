@@ -7,7 +7,7 @@ const classes = {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        height: "100%"
+        height: "calc(100vh - 7rem)"
     },
     divider: {
         height: "85vh",

@@ -1,20 +1,43 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 0.875rem !important;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 0.875rem !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
-html{
-  font-size: calc(0.75vh + 0.75vw);
-  height: 100vh;
-  width: 100vw;
+html {
+    font-size: calc(0.75vh + 0.75vw);
+    height: 100vh;
+    width: 100vw;
 }
+
+/* TOOLTIP */
+/* div .ant-tooltip {
+    width: fit-content !important;
+    height: fit-content !important;
+    font-size: 1rem;
+    padding-right: 0rem;
+}
+div .ant-tooltip-inner {
+    min-width: fit-content !important;
+    min-height: fit-content !important;
+    padding: 1rem 2rem;
+}
+div .ant-tooltip-arrow {
+    width: 3rem;
+    height: 3rem;
+}
+
+div .ant-tooltip-placement-left .ant-tooltip-arrow,
+.ant-tooltip-placement-leftTop .ant-tooltip-arrow,
+.ant-tooltip-placement-leftBottom .ant-tooltip-arrow {
+    right: -3rem;
+} */

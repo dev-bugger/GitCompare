@@ -62,7 +62,7 @@ const Buttons = () => {
             <Tooltip classname="tooltip" placement="left" title="SORT">
                 <Button
                     shape="round"
-                    style={{ ...classes.btn, ...classes.sortBtn, top: "12vh" }}
+                    style={{ ...classes.btn, ...classes.sortBtn, top: "6rem" }}
                     onClick={() => dispatch(toggleDrawer(true))}
                 >
                     <img src={sort} alt="sort" style={classes.img} />
@@ -72,7 +72,7 @@ const Buttons = () => {
             <Tooltip classname="tooltip" placement="left" title="RESET">
                 <Button
                     onClick={handleOnReset}
-                    style={{ ...classes.btn, top: "18vh" }}
+                    style={{ ...classes.btn, top: "10rem" }}
                 >
                     <SyncOutlined />
                 </Button>
@@ -84,7 +84,7 @@ const Buttons = () => {
             >
                 <Button
                     onClick={copyToClipboard}
-                    style={{ ...classes.btn, top: "24vh" }}
+                    style={{ ...classes.btn, top: "14rem" }}
                 >
                     <EyeOutlined />
                 </Button>

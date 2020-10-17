@@ -11,7 +11,7 @@ const classes = {
     header: {
         position: "fixed",
         width: "100vw",
-        height: "10vh",
+        height: "5rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

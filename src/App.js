@@ -1,10 +1,11 @@
 import React from "react";
-import Base from "./components/Base";
-import "antd/dist/antd.css";
 import { HashRouter } from "react-router-dom";
-import StartScreen from "./views/StartScreen";
 import { useSelector } from "react-redux";
+import Base from "./components/Base";
+import StartScreen from "./views/StartScreen";
 import MainScreen from "./views/MainScreen";
+import "antd/dist/antd.css";
+import "./styles.css";
 
 function App() {
     const screen = useSelector((state) => state.userReducer.screen);
