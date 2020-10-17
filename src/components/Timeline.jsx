@@ -12,9 +12,9 @@ const classes = {
         flexDirection: "column"
     },
     timeline: {
-        width: "20vw",
-        paddingTop: "4vh",
-        paddingLeft: "0",
+        width: "100%",
+        paddingTop: "2rem",
+        paddingLeft: "2vw",
         overflowY: "auto",
         display: "flex",
         flexDirection: "column"
