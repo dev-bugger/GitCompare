@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/GitCompare/static/css/main.9d2a5792.chunk.css",
-    "main.js": "/GitCompare/static/js/main.8f46561b.chunk.js",
-    "main.js.map": "/GitCompare/static/js/main.8f46561b.chunk.js.map",
+    "main.css": "/GitCompare/static/css/main.43e7d5bd.chunk.css",
+    "main.js": "/GitCompare/static/js/main.dc443f27.chunk.js",
+    "main.js.map": "/GitCompare/static/js/main.dc443f27.chunk.js.map",
     "runtime-main.js": "/GitCompare/static/js/runtime-main.9738eb5e.js",
     "runtime-main.js.map": "/GitCompare/static/js/runtime-main.9738eb5e.js.map",
     "static/css/2.e10332d9.chunk.css": "/GitCompare/static/css/2.e10332d9.chunk.css",
     "static/js/2.c4f3fab3.chunk.js": "/GitCompare/static/js/2.c4f3fab3.chunk.js",
     "static/js/2.c4f3fab3.chunk.js.map": "/GitCompare/static/js/2.c4f3fab3.chunk.js.map",
     "index.html": "/GitCompare/index.html",
-    "precache-manifest.f4a93fe56f1759a69615e18d4f712806.js": "/GitCompare/precache-manifest.f4a93fe56f1759a69615e18d4f712806.js",
+    "precache-manifest.3917034445c06585a98625be6cd3e927.js": "/GitCompare/precache-manifest.3917034445c06585a98625be6cd3e927.js",
     "service-worker.js": "/GitCompare/service-worker.js",
     "static/css/2.e10332d9.chunk.css.map": "/GitCompare/static/css/2.e10332d9.chunk.css.map",
-    "static/css/main.9d2a5792.chunk.css.map": "/GitCompare/static/css/main.9d2a5792.chunk.css.map",
+    "static/css/main.43e7d5bd.chunk.css.map": "/GitCompare/static/css/main.43e7d5bd.chunk.css.map",
     "static/js/2.c4f3fab3.chunk.js.LICENSE.txt": "/GitCompare/static/js/2.c4f3fab3.chunk.js.LICENSE.txt",
     "static/media/compare1.png": "/GitCompare/static/media/compare1.4cd0bea5.png",
     "static/media/icon.gif": "/GitCompare/static/media/icon.f9f941bf.gif",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.9738eb5e.js",
     "static/css/2.e10332d9.chunk.css",
     "static/js/2.c4f3fab3.chunk.js",
-    "static/css/main.9d2a5792.chunk.css",
-    "static/js/main.8f46561b.chunk.js"
+    "static/css/main.43e7d5bd.chunk.css",
+    "static/js/main.dc443f27.chunk.js"
   ]
 }
