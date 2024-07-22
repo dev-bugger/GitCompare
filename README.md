@@ -14,7 +14,7 @@ Git Hub Compare is a web application to compare multiple github profiles by foll
 
 ## Author
 
-anjali.rawat <rawat.ar2418@gmail.com>
+anjali.rawat
 
 ## Project Status
 
