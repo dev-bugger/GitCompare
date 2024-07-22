@@ -1,10 +1,9 @@
 import React from "react";
-import { HashRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { HashRouter } from "react-router-dom";
 import Base from "./components/Base";
-import StartScreen from "./views/StartScreen";
 import MainScreen from "./views/MainScreen";
-import "antd/dist/antd.css";
+import StartScreen from "./views/StartScreen";
 import "./styles.css";
 
 function App() {

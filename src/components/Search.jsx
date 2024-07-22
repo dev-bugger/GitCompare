@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { GithubOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
-import React, { useState, useEffect, useRef } from "react";
-import { UserOutlined, GithubOutlined } from "@ant-design/icons";
+import Axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
-    setUserProfileData,
-    setLoading,
+    closeAlert,
     handleError,
     setAlert,
-    closeAlert
+    setLoading,
+    setUserProfileData
 } from "../actions";
-import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import Axios from "axios";
 import { modify } from "../utils/modify";
 const classes = {
     button: {},
@@ -23,12 +23,19 @@ const Search = (props) => {
     const userNames = useSelector((state) => state.userReducer.userNames);
 
     const ref = useRef(null);
-    const history = useHistory();
+    const location = useLocation();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
         event.preventDefault();
         setInput(event.target.value);
+    };
+
+    const generateURLAndSearch = (userNames) => {
+        const params = new URLSearchParams();
+        params.set("usernames", userNames);
+        navigate(`?${params.toString()}`);
     };
 
     const handleClick = () => {
@@ -37,7 +44,7 @@ const Search = (props) => {
                 userNames.length === 0
                     ? input
                     : `${userNames.join(",")},${input}`;
-            history.replace(`?usernames=${query}`);
+            generateURLAndSearch(query);
         }
         setInput("");
         ref.current.focus();
@@ -49,11 +56,10 @@ const Search = (props) => {
             })
             .catch((_error) => {
                 input = input.replace("%20", " ");
-                let query = modify(history.location.search);
+                let query = modify(location.search);
                 query = query.filter((q) => q !== input);
-                query =
-                    query.length === 0 ? "" : `?usernames=${query.join(",")}`;
-                history.replace(query);
+                query = query.length === 0 ? "" : `${query.join(",")}`;
+                generateURLAndSearch(query);
 
                 dispatch(handleError(input));
                 dispatch(
@@ -73,7 +79,7 @@ const Search = (props) => {
     };
 
     useEffect(() => {
-        let query = history.location.search;
+        let query = location.search;
         if (!query.trim()) return;
         query = modify(query);
         const filteredQuery = query.filter((q) => userNames.indexOf(q) < 0);
@@ -84,7 +90,7 @@ const Search = (props) => {
                 getGitHubData(q, i === filteredQuery.length - 1);
             });
         }
-    }, [history.location.search]);
+    }, [location.search]);
 
     useEffect(() => {
         ref.current.focus();

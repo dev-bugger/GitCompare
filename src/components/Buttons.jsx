@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Tooltip } from "antd";
 import { SyncOutlined, EyeOutlined } from "@ant-design/icons";
 import { handleReset, setAlert, closeAlert } from "../actions";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleDrawer } from "../actions";
 import sort from "../assests/sort.png";
@@ -20,12 +20,12 @@ const classes = {
     img: { width: "1rem", height: "1rem" }
 };
 const Buttons = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleOnReset = () => {
         dispatch(handleReset());
-        history.replace("");
+        // navigate.to();
     };
     const copyToClipboard = async () => {
         const link = window.location.href;
